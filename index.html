@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UselessWebsite</title>
+  <title>BrightLightSite</title> <!-- Changed title -->
   <style>
-    /* From Uiverse.io by Yaya12085 */
     body {
       background-color: #111;
       transition: background 0.4s;
@@ -21,7 +20,7 @@
     }
 
     body.light {
-      background-color: #fefee3; /* "Light on" color */
+      background-color: #fffde7; /* Brighter "light on" background */
       color: #111;
     }
 
@@ -92,7 +91,7 @@
   </style>
 </head>
 <body>
-  <h1>UselessWebsite 💡</h1>
+  <h1>BrightLightSite 💡</h1> <!-- Changed heading -->
 
   <div class="container">
     <input type="checkbox" id="checkbox" />
@@ -100,7 +99,6 @@
   </div>
 
   <script>
-    // Toggle body background when switch is flipped
     const checkbox = document.getElementById("checkbox");
     checkbox.addEventListener("change", () => {
       document.body.classList.toggle("light", checkbox.checked);
