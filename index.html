@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UselessWebsite</title>
+  <style>
+    /* From Uiverse.io by Yaya12085 */
+    body {
+      background-color: #111;
+      transition: background 0.4s;
+      font-family: system-ui, sans-serif;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding-top: 60px;
+    }
+
+    body.light {
+      background-color: #fefee3; /* "Light on" color */
+      color: #111;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .label {
+      height: 60px;
+      width: 120px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      -webkit-box-shadow: inset 0 0 5px 4px rgba(255, 255, 255, 1),
+        inset 0 0 20px 1px rgba(0, 0, 0, 0.488),
+        10px 20px 30px rgba(0, 0, 0, 0.096),
+        inset 0 0 0 3px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 5px 4px rgba(255, 255, 255, 1),
+        inset 0 0 20px 1px rgba(0, 0, 0, 0.488),
+        10px 20px 30px rgba(0, 0, 0, 0.096),
+        inset 0 0 0 3px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.4s;
+    }
+
+    .label:hover {
+      transform: perspective(100px) rotateX(5deg) rotateY(-5deg);
+    }
+
+    #checkbox:checked ~ .label:hover {
+      transform: perspective(100px) rotateX(-5deg) rotateY(5deg);
+    }
+
+    #checkbox {
+      display: none;
+    }
+
+    #checkbox:checked ~ .label::before {
+      left: 70px;
+      background-color: #000000;
+      background-image: linear-gradient(315deg, #000000 0%, #414141 70%);
+      transition: 0.4s;
+    }
+
+    .label::before {
+      position: absolute;
+      content: "";
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: #000000;
+      background-image: linear-gradient(
+        130deg,
+        #757272 10%,
+        #ffffff 11%,
+        #726f6f 62%
+      );
+      left: 10px;
+      box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3),
+        10px 10px 10px rgba(0, 0, 0, 0.3);
+      transition: 0.4s;
+    }
+  </style>
+</head>
+<body>
+  <h1>UselessWebsite 💡</h1>
+
+  <div class="container">
+    <input type="checkbox" id="checkbox" />
+    <label class="label" for="checkbox"></label>
+  </div>
+
+  <script>
+    // Toggle body background when switch is flipped
+    const checkbox = document.getElementById("checkbox");
+    checkbox.addEventListener("change", () => {
+      document.body.classList.toggle("light", checkbox.checked);
+    });
+  </script>
+</body>
+</html>
